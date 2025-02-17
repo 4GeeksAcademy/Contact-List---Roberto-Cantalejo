@@ -1,0 +1,49 @@
+.agenda-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+}
+
+.agenda {
+    position: relative;
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+}
+
+.agenda-pages {
+    flex: 1;
+    background: #ffffff;
+    position: relative;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.agenda-left-page {
+    border-right: 1px solid #ddd;
+}
+
+.agenda-right-page {
+    border-left: 1px solid #ddd;
+}
+
+.agenda-split {
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    height: 100%;
+    background: rgb(139, 102, 0);
+    opacity: 0.5;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .agenda-marker {
+    position: absolute;
+    left: 49.6%;
+    width: 20px;
+    height: 50%;
+    background: rgb(139, 0, 0);
+    top: -2px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, -90% 100%, 0 80%);
+  }
