@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f0f0f0;
+    background: #4A2C2C;
 }
 
 .agenda {
@@ -14,36 +14,46 @@
 }
 
 .agenda-pages {
+    display: flex;
     flex: 1;
-    background: #ffffff;
+    background: #F0E6D6;
     position: relative;
     box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Times New Roman', serif;
 }
 
 .agenda-left-page {
-    border-right: 1px solid #ddd;
+    flex: 1;
+    order: 1;
+    padding: 20px;
+    overflow-y: auto;
+    height: auto;
 }
 
 .agenda-right-page {
-    border-left: 1px solid #ddd;
+    flex: 1;
+    order: 2;
+    padding: 20px;
+    overflow-y: auto;
+    height: auto;
 }
 
 .agenda-split {
     position: absolute;
     left: 50%;
-    width: 10px;
+    width: 5px;
     height: 100%;
-    background: rgb(139, 102, 0);
+    background: #1A1A1A;
     opacity: 0.5;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
 
   .agenda-marker {
     position: absolute;
-    left: 49.6%;
+    left: 49.2%;
     width: 20px;
     height: 50%;
-    background: rgb(139, 0, 0);
+    background: #2C4A3C;
     top: -2px;
     clip-path: polygon(0 0, 100% 0, 100% 80%, -90% 100%, 0 80%);
   }
