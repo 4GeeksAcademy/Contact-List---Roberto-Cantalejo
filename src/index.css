@@ -61,3 +61,12 @@
   li {
     border-bottom: 1px solid #B87D6E;
   }
+
+  .data-field #pencil {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .data-field:hover #pencil {
+    opacity: 1;
+  }
