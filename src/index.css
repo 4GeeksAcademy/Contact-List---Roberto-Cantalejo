@@ -13,6 +13,73 @@
     display: flex;
 }
 
+.agenda-cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 70vh;
+  display: flex;
+  background: #2C4A3C;
+  margin:auto;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.upper-agenda-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  border-bottom: 1px solid #D4A056;
+}
+
+.upper-agenda-cover > span {
+  font-size: 4em;
+  color: black;
+  margin-bottom: 10px;
+  font-family: Heligthon Signature;
+}
+
+.upper-agenda-cover > i {
+  color: #6F4E37;
+  font-size: 10em;
+}
+
+.lower-agenda-cover {
+  display: grid; /* Una solución por no usar bootstrap. */
+  grid-template-columns: 1fr 1fr; /* Dividimos el espacio disponible en dos columnas iguales */
+  gap: 20px;
+  padding: 20px;
+}
+
+.left-lower-agenda-cover,
+.right-lower-agenda-cover {
+  background: #f0f0f0; 
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.left-lower-agenda-cover form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left-lower-agenda-cover input,
+.left-lower-agenda-cover button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.right-lower-agenda-cover select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .agenda-pages {
     display: flex;
     flex: 1;
@@ -69,4 +136,9 @@
 
   .data-field:hover #pencil {
     opacity: 1;
+  }
+
+  @font-face {
+    font-family: "Heligthon Signature";
+    src: url(./fonts/Heligthon-Signature.otf);
   }
