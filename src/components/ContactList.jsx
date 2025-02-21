@@ -2,23 +2,24 @@ import React, { useEffect, useState } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useContext } from 'react';
 import { UserContext } from "../components/UserContext.jsx";
+import { ContactListContext } from '../components/UserContext.jsx';
 
 function ContactList() {
 
-    const [contacts, setContacts] = useState([])   // Hago un useState para almacenar los contactos cargados.
+    const [contacts, setContacts] = useContext(ContactListContext)   // Llamo a la contact list por un contexto para que funcione con el creador de contactos también
     const [editedValue, setEditedValue] = useState('')  // Hago un useState para almacenar el valor editado.
     const [editing, setEditing] = useState({ id: null, field: '' })   // Hago un useState para almacenar el id y el campo que se está editando. 
     const [user, setUser] = useContext(UserContext);
 
     const getContactList = async() => { // Aquí meto una llamada a los contactos del usuario que esté elegido.
-        if (!user) return; // Para prevenir errores si no hay usuario seleccionado.
-        const response = await fetch(`https://playground.4geeks.com/contact/agendas/${user}`);
-        const data = await response.json();
-        setContacts(data.contacts);
+      if (!user) return; // Para prevenir errores si no hay usuario seleccionado.
+      const response = await fetch(`https://playground.4geeks.com/contact/agendas/${user}`);
+      const data = await response.json();
+      setContacts(data.contacts);
     }
 
     useEffect(() => {   // Llamo a la agenda de contactos cada vez que se cambia de usuario
-      getContactList();
+      getContactList(user, setContacts);
     }, [user])
     
     const deleteContact = async (id) => { // Función para borrar un contacto

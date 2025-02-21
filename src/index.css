@@ -32,6 +32,7 @@
   width: 100%;
   padding-top: 20px;
   border-bottom: 1px solid #D4A056;
+  overflow:hidden;
 }
 
 .upper-agenda-cover > span {
@@ -57,24 +58,25 @@
   grid-template-columns: 1fr 1fr; /* Dividimos el espacio disponible en dos columnas iguales */
   gap: 20px;
   padding: 20px;
+  overflow: hidden;
 }
 
 .left-lower-agenda-cover,
 .right-lower-agenda-cover {
   background: #f0f0f0; 
-  padding: 15px;
+  padding: 1.2em;
   border-radius: 8px;
 }
 
 .left-lower-agenda-cover form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1em;
 }
 
 .left-lower-agenda-cover input,
 .left-lower-agenda-cover button {
-  padding: 8px;
+  padding: 0.8em;
   border: 1px solid #ccc;
   border-radius: 4px;
 }

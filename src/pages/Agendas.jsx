@@ -3,6 +3,7 @@ import { Agenda } from "../components/Agenda.jsx";
 import ContactList from "../components/ContactList.jsx";
 import React, { useContext } from 'react';
 import { UserContext } from "../components/UserContext.jsx";
+import ContactGenerator from "../components/ContactGenerator.jsx";
 
 export const Agendas = () => {
 
@@ -10,6 +11,6 @@ export const Agendas = () => {
   const user = useContext(UserContext);
 
 	return (
-		<Agenda leftContent={<div>Contenido en la izquierda</div>} rightContent={<ContactList/>}/>
+		<Agenda leftContent={<ContactGenerator/>} rightContent={<ContactList/>}/>
 	);
 }; 
