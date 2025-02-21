@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useContext } from 'react';
+import { UserContext } from "../components/UserContext.jsx";
 
-function ContactList({user}) {
+function ContactList() {
 
     const [contacts, setContacts] = useState([])   // Hago un useState para almacenar los contactos cargados.
     const [editedValue, setEditedValue] = useState('')  // Hago un useState para almacenar el valor editado.
     const [editing, setEditing] = useState({ id: null, field: '' })   // Hago un useState para almacenar el id y el campo que se está editando. 
+    const [user, setUser] = useContext(UserContext);
 
     const getContactList = async() => { // Aquí meto una llamada a los contactos del usuario que esté elegido.
+        if (!user) return; // Para prevenir errores si no hay usuario seleccionado.
         const response = await fetch(`https://playground.4geeks.com/contact/agendas/${user}`);
         const data = await response.json();
         setContacts(data.contacts);
@@ -38,9 +42,9 @@ function ContactList({user}) {
 
   return (
     <div className="contact-list">
-    <h2 className='text-center'>Lista de contactos de {user}</h2>
+    <h2 className='text-center'>{!user ? "No has seleccionado usuario" : `Lista de contactos de ${user}`}</h2>
     {contacts.length === 0 ? (
-      <p>No hay contactos disponibles.</p>
+      <p className='text-center'>No hay contactos disponibles.</p>
     ) : (
       <ul className='list-unstyled'>
         {contacts.map((contact) => (

@@ -1,6 +1,7 @@
 import React from "react";
-export const Agenda = ({leftContent, rightContent}) => {
+import { Link } from "react-router-dom";
 
+export const Agenda = ({ leftContent, rightContent }) => {
     return (
         <div className="agenda-container">
             <div className="agenda">
@@ -9,8 +10,10 @@ export const Agenda = ({leftContent, rightContent}) => {
                     <div className="agenda-left-page">{leftContent}</div>
                 </div>
                 <div className="agenda-split"></div>
-                <div className="agenda-marker"></div>
-                </div>
+                <Link to="/">
+                    <div className="agenda-marker"></div>
+                </Link>
+            </div>
         </div>
     );
-}; 
+};

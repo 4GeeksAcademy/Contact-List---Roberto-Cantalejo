@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { UserContext } from './UserContext'
 
 function AgendaCerrada() {
 
-    const [user, setUser] = useState("")
+    const [user, setUser] = useContext(UserContext);
     const [userList, setUserList] = useState([])
     const [newUser, setNewUser] = useState("")
 
@@ -33,7 +35,9 @@ function AgendaCerrada() {
             <div className="agenda-cover">
               <div className="upper-agenda-cover">
                 <span>{user !== "" ? `${user}'s agenda` : "No one's agenda"}</span>
-                <i className="bi bi-cup-hot-fill"></i>
+                <Link to="/Agendas">
+                <i id="coffee" className="bi bi-cup-hot-fill"></i>
+                </Link>
               </div>
               <div className="lower-agenda-cover">
                 <div className="left-lower-agenda-cover">

@@ -6,7 +6,7 @@ import {
     Route,
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
-import { Home } from "./pages/Home";
+import { Agendas } from "./pages/Agendas";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import { Portada } from "./pages/Portada";
@@ -24,8 +24,7 @@ export const router = createBrowserRouter(
 
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
         <Route path= "/" element={<Portada />} />
-        <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
-        <Route path="/demo" element={<Demo />} />
+        <Route path= "/agendas" element={<Agendas />} />
       </Route>
     )
 );
