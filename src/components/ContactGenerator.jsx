@@ -48,7 +48,7 @@ function ContactGenerator() {
     }
     
   return (
-    <div className='contact-generator container mt-4'>
+    <div className='contact-generator container'>
         <h2>{!user ? "" : "Añade un nuevo contacto a la lista"}</h2>
 {!user ? "" :<form onSubmit={enviarDatos}>
   <div class="form-group">
