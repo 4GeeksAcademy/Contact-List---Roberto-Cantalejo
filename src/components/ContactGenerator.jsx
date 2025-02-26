@@ -1,6 +1,5 @@
 import { React, useContext, useState } from 'react';
 import { ContactListContext, UserContext } from "../components/UserContext.jsx";
-import {getContactList } from "./ContactList.jsx";
 
 function ContactGenerator() {
         const [user, setUser] = useContext(UserContext); // Importa el contexto del usuario, será útil mas adelante.
